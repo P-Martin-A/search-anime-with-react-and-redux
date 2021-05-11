@@ -1,0 +1,10 @@
+@import url('../../assets/styles/tools/vars.css');
+
+.title {
+  font-size: 2.5rem;
+  color: var(--blue);
+}
+
+.title .italic {
+  color: var(--grey);
+}

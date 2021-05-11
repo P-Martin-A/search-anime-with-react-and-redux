@@ -1,0 +1,20 @@
+@import url('../../assets/styles/tools/vars.css');
+
+.searchContainer {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.searchContainer .search {
+  width: 80%;
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  color: var(--black);
+  box-shadow: 0 1px 0 var(--blue);
+  border: none;
+  outline: none;
+}
+
+.searchContainer .search:focus {
+  outline: 1px solid var(--blue);
+}

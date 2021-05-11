@@ -1,0 +1,28 @@
+@import url('../../assets/styles/tools/vars.css');
+
+.list {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.list .item {
+  padding: .5rem 2.5rem;
+  border-radius: 2rem;
+  background-color: var(--grey);
+}
+.list .item:hover {
+  background-color: var(--white);
+  box-shadow: 0 0 1rem var(--grey);
+}
+.list .item:hover .link {
+  color: var(--grey);
+}
+
+.list .item .link {
+  font-size: 1.5rem;
+  color: var(--white);
+}

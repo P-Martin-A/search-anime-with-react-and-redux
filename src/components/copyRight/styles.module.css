@@ -1,0 +1,18 @@
+@import url('../../assets/styles/tools/vars.css');
+
+.list {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.list .item {
+  margin-bottom: .5rem;
+}
+
+.list .item .text {
+  color: var(--white);
+}

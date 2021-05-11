@@ -1,0 +1,6 @@
+@import url('../../assets/styles/tools/vars.css');
+
+.footer {
+  height: 10vh;
+  background-color: var(--blue);
+}
