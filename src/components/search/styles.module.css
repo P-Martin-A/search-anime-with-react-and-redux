@@ -10,11 +10,12 @@
   padding: 1rem 2rem;
   font-size: 1.5rem;
   color: var(--black);
-  box-shadow: 0 1px 0 var(--blue);
+  box-shadow: 0 .1rem 0 var(--blue);
+  border-radius: .5rem;
   border: none;
   outline: none;
 }
 
 .searchContainer .search:focus {
-  outline: 1px solid var(--blue);
+  box-shadow: 0 0 .2rem var(--blue);
 }

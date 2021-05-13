@@ -13,9 +13,13 @@
   },
   "plugins": ["react", "import", "jsx-a11y", "node", "promise", "react-hooks"],
   "rules": {
-    "array-element-newline": 2,
-    "array-bracket-newline": 2,
-    "array-bracket-spacing": 2,
+    "array-element-newline": [2, "always"],
+    "array-bracket-newline": [2, { "multiline": true, "minItems": 2 }],
+    "array-bracket-spacing": [
+      2,
+      "always",
+      { "objectsInArrays": false, "arraysInArrays": false }
+    ],
     "arrow-body-style": 0,
     "block-scoped-var": 2,
     "brace-style": [
@@ -25,6 +29,7 @@
         "allowSingleLine": true
       }
     ],
+    "camelcase": 0,
     "comma-spacing": [
       2,
       {
@@ -200,9 +205,12 @@
     "react/display-name": 0,
     "react/jsx-boolean-value": 0,
     "react/jsx-closing-bracket-location": 2,
-    "react/jsx-curly-spacing": [2, "never"],
-    "react/jsx-equals-spacing": [2, "never"],
+    "react/jsx-curly-spacing": [
+      2,
+      { "when": "always", "allowMultiline": false, "children": true }
+    ],
     "react/jsx-indent-props": [2, 2],
+    "react/jsx-space-before-closing": [2, "always"],
     "react/jsx-no-bind": [
       2,
       {
@@ -211,8 +219,6 @@
     ],
     "react/jsx-no-undef": 2,
     "react/jsx-pascal-case": 2,
-    "react/jsx-sort-prop-types": 0,
-    "react/jsx-sort-props": 0,
     "react/jsx-uses-react": 2,
     "react/jsx-uses-vars": 2,
     "react/jsx-wrap-multilines": 2,

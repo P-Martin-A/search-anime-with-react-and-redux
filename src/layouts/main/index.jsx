@@ -8,8 +8,8 @@ import AnimeList from '../../components/animeList'
 
 function Main() {
   return (
-    <main className={main}>
-      <div className={container}>
+    <main className={ main }>
+      <div className={ container }>
         <Search />
         <AnimeList />
       </div>
