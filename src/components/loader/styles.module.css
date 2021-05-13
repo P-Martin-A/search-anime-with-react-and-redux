@@ -1,0 +1,15 @@
+@import url('../../assets/styles/tools/vars.css');
+
+.loader {
+  border: 2rem solid var(--grey);
+  border-top: 2rem solid var(--blue);
+  border-radius: 50%;
+  width: 30rem;
+  height: 30rem;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

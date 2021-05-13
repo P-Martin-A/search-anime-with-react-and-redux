@@ -4,15 +4,12 @@ import { list, item, text } from './styles.module.css'
 
 function CopyRight() {
   return (
-    <ul className={list}>
-      <li className={item}>
-        <span className={text}>All Rights Reserved</span>
+    <ul className={ list }>
+      <li className={ item }>
+        <span className={ text }>All Rights Reserved ©2021</span>
       </li>
-      <li className={item}>
-        <span className={text}>© 2021</span>
-      </li>
-      <li className={item}>
-        <span className={text}>Created using React and Redux, stylized with css</span>
+      <li className={ item }>
+        <span className={ text }>Created using React and Redux, stylized with css</span>
       </li>
     </ul>
   )

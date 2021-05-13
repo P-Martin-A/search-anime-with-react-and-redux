@@ -4,25 +4,39 @@
   width: 100%;
   height: 100%;
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  overflow: scroll hidden;
+}
+.list::-webkit-scrollbar {
+  width: 100%;
+  height: 1rem;
+}
+.list::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  background-color: var(--black);
 }
 
 .list .item {
+  margin: 0 1rem;
   padding: .5rem 2.5rem;
   border-radius: 2rem;
   background-color: var(--grey);
 }
-.list .item:hover {
+.list .item:hover,
+.list .item:focus {
   background-color: var(--white);
   box-shadow: 0 0 1rem var(--grey);
 }
-.list .item:hover .link {
+.list .item:hover .link,
+.list .item:focus .link {
   color: var(--grey);
 }
 
 .list .item .link {
   font-size: 1.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   color: var(--white);
 }

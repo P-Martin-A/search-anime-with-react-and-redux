@@ -4,37 +4,40 @@
   width: 100%;
   height: 100%;
   display: flex;
-  align-items: center;
   justify-content: space-around;
+  align-items: center;
   flex-wrap: wrap;
-  overflow-y: scroll;
 }
 
 .animeList .card {
-  width: 300px;
-  height: 500px;
+  width: 30rem;
+  height: 50rem;
   margin-bottom: 2rem;
+  overflow: hidden;
   border-radius: 1rem;
-  border: 1px solid var(--black);
+  box-shadow: 0 0 1rem var(--black);
 }
 
 .animeList .card .figure {
   width: 100%;
   height: 100%;
+  position: relative;
   border-radius: 1rem;
 }
 
-.animeList .card .figure .imagen {
+.animeList .card .figure .image {
   width: 100%;
-  height: 80%;
+  height: 100%;
   object-fit: cover;
 }
 
-.animeList .card .figure .title {
+.animeList .card .figure .text {
   width: 100%;
-  height: 20%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  padding: 1rem;
   font-size: 2rem;
+  opacity: .8;
+  color: var(--white);
+  background-color: var(--black);
 }

@@ -1,7 +1,6 @@
 @import url('../../assets/styles/tools/vars.css');
 
 .aside {
-  height: 8vh;
-  border-top: 1px solid var(--grey);
-  border-bottom: 1px solid var(--grey);
+  height: 7rem;
+  border-bottom: .1rem solid var(--grey);
 }

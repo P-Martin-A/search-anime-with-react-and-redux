@@ -7,8 +7,8 @@ import Title from '../../components/title'
 
 function Header() {
   return (
-    <header className={header}>
-      <div className={container}>
+    <header className={ header }>
+      <div className={ container }>
         <Title />
       </div>
     </header>

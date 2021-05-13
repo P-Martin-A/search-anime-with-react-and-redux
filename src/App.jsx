@@ -1,20 +1,20 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 
 import './assets/styles/app.css'
 
-import Header from './layouts/header'
-import Aside from './layouts/aside'
-import Main from './layouts/main'
-import Footer from './layouts/footer'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+
+import Home from './pages/Home'
+import Anime from './pages/Anime'
 
 function App() {
   return (
-    <Fragment>
-      <Header />
-      <Aside />
-      <Main />
-      <Footer />
-    </Fragment>
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/" component={ Home } />
+        <Route exact path="/anime/:id" component={ Anime } />
+      </Switch>
+    </BrowserRouter>
   )
 }
 
