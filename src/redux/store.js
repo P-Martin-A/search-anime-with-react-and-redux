@@ -12,7 +12,7 @@ const INITIAL_STATE = {
   error: null
 }
 
-const COMPOSE_ENHANCERS = __REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+// const COMPOSE_ENHANCERS = __REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
 function generateStore() {
   const STORE = createStore(
@@ -20,7 +20,8 @@ function generateStore() {
     INITIAL_STATE,
     // Error: Actions must be plain objects. Use custom middleware for async actions.
     // POR ESO AGREGUÉ LA FUNCIÓN "applyMiddleware()"
-    COMPOSE_ENHANCERS(applyMiddleware(thunk))
+    // COMPOSE_ENHANCERS(applyMiddleware(thunk))
+    compose(applyMiddleware(thunk))
   )
 
   getTopAnimes()(STORE.dispatch, STORE.getState)
