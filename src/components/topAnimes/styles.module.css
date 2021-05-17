@@ -19,24 +19,26 @@
 
 .list .item {
   margin: 0 1rem;
-  padding: .5rem 2.5rem;
   border-radius: 2rem;
-  background-color: var(--grey);
 }
 .list .item:hover,
 .list .item:focus {
-  background-color: var(--white);
-  box-shadow: 0 0 1rem var(--grey);
+  box-shadow: 0 0 1rem var(--blue);
 }
-.list .item:hover .link,
-.list .item:focus .link {
-  color: var(--grey);
+.list .item:hover .button,
+.list .item:focus .button {
+  color: var(--black);
+  background-color: var(--white);
 }
 
-.list .item .link {
+.list .item .button {
+  cursor: pointer;
   font-size: 1.5rem;
+  padding: .5rem 2.5rem;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  color: var(--white);
+  color: var(--blue);
+  border-radius: 2rem;
+  border: none;
 }
