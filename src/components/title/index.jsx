@@ -1,16 +1,21 @@
 import React from 'react'
 
-import { title, italic } from './styles.module.css'
-
 import { Link } from 'react-router-dom'
 
-function Title() {
+function Title({ isHome }) {
   return (
-    <Link to="/">
-      <h1 className={ title }>
-        The <i className={ italic }>Anime</i> List
+    <div className="d-flex justify-content-around align-items-center">
+      <h1 className="text-info">
+      The <i className="text-secondary">Anime</i> List
       </h1>
-    </Link>
+      { isHome !== '/' && (
+        <Link className="text-decoration-none text-info h1"
+          to="/"
+        >
+          <i className="bi bi-house-door-fill" />
+        </Link>
+      ) }
+    </div>
   )
 }
 

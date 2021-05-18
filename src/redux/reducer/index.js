@@ -52,6 +52,13 @@ const reducer = (state, action) => {
         fetching: false,
         error: action.payload
       }
+    case 'RESET_STORE':
+      return {
+        ...state,
+        search: '',
+        results_animes: [],
+        details_anime: {}
+      }
     default:
       return { ...state }
   }

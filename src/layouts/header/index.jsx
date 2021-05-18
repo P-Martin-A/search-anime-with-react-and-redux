@@ -1,16 +1,13 @@
 import React from 'react'
 
-import { header } from './styles.module.css'
-import { container } from '../../assets/styles/tools/container.module.css'
-
 import Title from '../../components/title'
 
-function Header() {
+function Header({ path }) {
   return (
-    <header className={ header }>
-      <div className={ container }>
-        <Title />
-      </div>
+    <header className="container-fluid text-center py-2 border-bottom boder-2">
+      <Title
+        isHome={ path }
+      />
     </header>
   )
 }

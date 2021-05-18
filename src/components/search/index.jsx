@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 
-import { searchContainer, search } from './styles.module.css'
-
 import { connect } from 'react-redux'
 import { getAnimeSearch } from '../../redux/actions'
 
@@ -18,16 +16,19 @@ function Search({ getAnimeSearch }) {
   }
 
   return (
-    <form className={ searchContainer }
+    <form className="form-floating mb-5"
       onSubmit={ HANDLE_FORM }
     >
-      <input className={ search }
+      <input className="form-control"
         onChange={ ({ target: { value } }) => setQuery(value) }
         value={ query }
+        id="searchAnime"
         type="search"
         placeholder="Search a Anime"
+        minLength="3"
         required
       />
+      <label htmlFor="searchAnime">Search a Anime</label>
     </form>
   )
 }

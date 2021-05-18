@@ -1,9 +1,13 @@
 import React from 'react'
 
-import { loader } from './styles.module.css'
-
 function Loader() {
-  return <div className={ loader } />
+  return (
+    <div className="d-flex justify-content-center">
+      <div className="spinner-border" role="status">
+        <span className="visually-hidden">Loading...</span>
+      </div>
+    </div>
+  )
 }
 
 export default Loader

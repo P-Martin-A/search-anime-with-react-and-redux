@@ -1,7 +1,5 @@
 import React from 'react'
 
-import { details, sources, trailer_video, figure, image, info, anime_title, description, list, item } from './styles.module.css'
-
 import Loader from '../loader'
 
 import { connect } from 'react-redux'
@@ -9,43 +7,47 @@ import { connect } from 'react-redux'
 function AnimeDetails({ fetching, details_anime }) {
   if (fetching) return <Loader />
 
-  const { url, image_url, trailer_url, title, aired: { string }, synopsis, genres } = details_anime
+  const { url, image_url, trailer_url, title, title_japanese, aired: { string }, synopsis, genres } = details_anime
 
   return (
-    <div className={ details }>
-      <div className={ sources }>
+    <div>
+      <div className="mb-5 h-75 text-center">
         { trailer_url ? (
-          <iframe className={ trailer_video }
+          <iframe className="w-100"
             src={ trailer_url }
             title={ title }
+            style={ { height: 400 + 'px' } }
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           />
         ) : (
-          <figure className={ figure }>
-            <img className={ image }
+          <figure className="figure">
+            <img className="figure-img img-fluid rounded"
               src={ image_url }
               alt={ title }
             />
+            <figcaption className="figure-caption">{ title_japanese }</figcaption>
           </figure>
         ) }
       </div>
-      <div className={ info }>
-        <div>
-          <h2 className={ anime_title }>
+      <div className="mb-5">
+        <div className="mb-4">
+          <h2 className="h1 text-info">
             { title }
-            <a href={ url } target="_blank" rel="noreferrer">More Info</a>
+            <a className="fs-5 px-2"
+              href={ url } target="_blank" rel="noreferrer"
+            >More Info</a>
           </h2>
-          <time>{ string }</time>
+          <time className="fs-6">{ string }</time>
         </div>
-        <p className={ description }>{ synopsis }</p>
-        <u>Genres: </u>
-        <ul className={ list }>
-          { genres.map(({ mal_id, name }) => (
-            <li className={ item }
+        <p className="fs-6 text-break fw-light">{ synopsis }</p>
+        <u className="text-decoration-underline">Genres: </u>
+        <ul className="list-unstyled d-flex justify-content-center align-items-center flex-wrap">
+          { genres.map(({ mal_id, name }, index) => (
+            <li className="mx-2 my-4 fst-italic text-muted"
               key={ mal_id }
-            >{ name }</li>
+            >{ index }_ { name }</li>
           )) }
         </ul>
       </div>

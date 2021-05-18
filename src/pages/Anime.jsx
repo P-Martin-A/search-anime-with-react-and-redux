@@ -5,9 +5,13 @@ import Footer from '../layouts/footer'
 import Section from '../layouts/section'
 
 import { connect } from 'react-redux'
-import { getDetailsAnime } from '../redux/actions'
+import { resetStore, getDetailsAnime } from '../redux/actions'
 
-function Anime({ match: { params: { id } }, getDetailsAnime }) {
+function Anime({ location: { pathname }, match: { params: { id } }, resetStore, getDetailsAnime }) {
+  if (pathname !== '/') {
+    resetStore()
+  }
+
   getDetailsAnime(id)
   return (
     <Fragment>
@@ -19,6 +23,7 @@ function Anime({ match: { params: { id } }, getDetailsAnime }) {
 }
 
 const MAP_DISPATCH_TO_PROPS = {
+  resetStore,
   getDetailsAnime
 }
 

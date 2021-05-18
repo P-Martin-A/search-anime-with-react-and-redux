@@ -8,7 +8,7 @@ export const getTopAnimes = () => async (dispatch, getState) => {
     const DATA = await RESPONSE.json()
     return dispatch({
       type: 'GET_TOP_ANIMES_SUCCESS',
-      payload: [ ...DATA.top.slice(0, 10) ]
+      payload: [ ...DATA.top.slice(0, 5) ]
     })
   } catch (error) {
     console.error(error.message)
@@ -60,4 +60,10 @@ export const getDetailsAnime = (id) => async (dispatch, getState) => {
       payload: error.message
     })
   }
+}
+
+export const resetStore = () => (dispatch, getState) => {
+  return dispatch({
+    type: 'RESET_STORE'
+  })
 }

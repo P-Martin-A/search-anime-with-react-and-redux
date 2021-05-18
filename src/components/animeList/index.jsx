@@ -1,7 +1,5 @@
 import React from 'react'
 
-import { animeList, card, figure, image, text } from './styles.module.css'
-
 import Loader from '../loader'
 
 import { Link } from 'react-router-dom'
@@ -11,22 +9,32 @@ function AnimeList({ fetching, results_animes }) {
   if (fetching) return <Loader />
 
   return (
-    <div className={ animeList }>
-      { results_animes.map(({ mal_id, image_url, title })=> (
-        <Link
+    <div className="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
+      { results_animes.map(({ mal_id, image_url, title }) => (
+        <div className="col"
           key={ mal_id }
-          to={ `/anime/${mal_id}` }
         >
-          <article className={ card }>
-            <figure className={ figure }>
-              <img className={ image }
-                src={ image_url }
-                alt={ title }
-              />
-              <figcaption className={ text }>{ title }</figcaption>
-            </figure>
+          <article className="card"
+            style={ { maxWidth: 540 + 'px' } }
+          >
+            <div className="row g-0">
+              <div className="col-md-6">
+                <img className="card-img h-100"
+                  src={ image_url }
+                  alt={ title }
+                />
+              </div>
+              <div className="col-md-6 align-self-center">
+                <div className="card-body">
+                  <h5 className="card-title fs-6">{ title }</h5>
+                  <Link className="btn btn-info text-white"
+                    to={ `/anime/${mal_id}` }
+                  >More info</Link>
+                </div>
+              </div>
+            </div>
           </article>
-        </Link>
+        </div>
       )) }
     </div>
   )
